@@ -1,0 +1,173 @@
+
+
+
+
+
+
+
+
+
+
+
+EmployeeEvent = IF(OR([employee_event] = "Joined", [employee_event] = "Terminated"), 1, 0)
+
+
+
+
+
+contains_value = CONTAINS('emmployee Department','employee Department'[Department],"HR")
+
+containssring_value = CONTAINSSTRING(SELECTVALUE('employee Department'[Full Name]),"TONY")
+
+
+Bonus% = IF(Basic_Salary[Salary]>=25000,"10%","20%")
+
+
+
+*calculating the bonus for the persentage*
+
+Salary after bonus = IF(Basic_Salary[Salary]>=25000,Basic_Salary[Salary]+(Basic_Salary[Salary]*10/100,Basic_Salary[Salary]+(Basic_Salary[Salary]*20/100)
+
+
+
+
+**************************________SQL_____********************
+
+CREATE DATABASE joojo;
+DROP DATABASE joojo;    or DROP SCHEMA joojo;
+
+USE joojo;
+
+CREATE TABLE student(
+id INT PRIMARY KEY,
+name VARCHAR(30)
+);
+
+
+*Adding and Dropping Columns*
+ALTER TABLE student ADD department VARCHAR(10);
+ALTER TABLE student DROP department VARCHAR(10);
+
+
+INSERT INTO student VALUE(1,"Mathan");
+INSERT INTO student VALUE(1,"Mathan"),(2,"maathavi");
+
+SELECT * 
+FROM student;
+
+
+SELECT id,name 
+FROM student;
+
+
+SELECT id
+FROM student
+WHERE salary>5000;
+
+
+
+SELECT id
+FROM student
+WHERE salary BETWEEN 5000 AND 8000;
+
+
+UPDATE student
+set job_dec="Engineer"
+WHERE job_dec="ANALYST"
+
+
+DELETE FROM student
+WHERE id=12;
+
+
+***ORDER BY***
+SELECT * FROM student
+ORDER BY salary,name;
+
+---custom ordering----
+SELECT * 
+FROM Employee
+ORDER BY (CASE job_desc
+WHEN 'CEO' THEN 1
+WHEN 'MANAGER' THEN 2
+WHEN 'HR' THEN 3
+ELSE 100 END
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT COUNT(employee_name)
+FROM Employee
+WHERE job_desc="MANAGER";
+
+
+SELECT AVG(Salary)
+FROM Employee
+WHERE job_desc="MANAGER";
+
+
+
+SELECT job_desc,COUNT(emp_id)
+FROM Employee
+GROUP BY job_desc;
+
+
+SELECT job_desc,COUNT(emp_id)
+FROM Employee
+GROUP BY job_desc
+HAVING COUNT(emp_id)>1;
+
+
+********Join********
+
+SELECT e.emp_id, e.emp_name, b.branch_name
+FROM Employee e,Branch b
+WHERE e.emp_id=b.branch.id;
+
+SELECT e.emp_id,e.emp_name,b .branch_name
+FROM Employee AS e
+JOIN Branch AS b
+ON Employee.branch_id=id=Branch.branch_id
+
+
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+

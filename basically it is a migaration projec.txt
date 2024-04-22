@@ -1,0 +1,25 @@
+basically it is a migaration project :
+
+they are changing the technologies to new version 
+for example they used before SSIS MDX Excel pivotes like kind of technoliges.
+
+now they are moving in to azure cloud platform
+now they are using data lake for warehouse then data bricks,
+power bi, report builder, tabuler editor.
+
+then before they used 1 model for every category thats means HR delivery finance like those are in one model 
+
+now they split in sepratly.
+
+then they added one another model name called " "
+that model is creted by me that is same as delivery model
+some attributes and measures needs to add
+
+then i created some dashbord also.. my RM will explaine the requirment so i will follow those and i will create it but i dont have access to deployed it so she will review the dashboard and if there any issue she will find then i need to correct it.
+thats it 
+
+then i worked with DAX and MDX queries
+they used MDX before now they are using DAX so i convert the MDX views to DAX and same thing with store porocedures
+
+
+last time i try to created the CI/CD using git action for the powerbi workspace 

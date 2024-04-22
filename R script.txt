@@ -1,0 +1,24 @@
+# The following code to create a dataframe and remove duplicated rows is always executed and acts as a preamble for your script: 
+#dataset <- data.frame(Mode_of_former_study, Country_of_provider, Age_group)
+dataset <- unique(dataset)
+
+# Create a bar chart
+library(ggplot2)
+library(dplyr)
+
+# Replace 'x_column' with the actual column name you want to use as the x-axis.
+x_column <- "Mode_of_former_study"
+
+# Replace 'y_column' with the actual column name you want to use as the y-axis (for counting or aggregating data).
+y_column <- "Country_of_provider"
+
+# Customize your chart
+chart <- ggplot(dataset, aes(x = !!as.name(x_column), fill = !!as.name(y_column))) +
+  geom_bar(position = "dodge") +
+  labs(title = "Bar Chart Example",
+       x = x_column,
+       y = "Count") +
+  theme_minimal()
+
+# Print the chart
+print(chart)
